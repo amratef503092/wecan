@@ -5,8 +5,6 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:wecan/view/home/home.dart';
 import 'package:wecan/view/screen_two.dart';
 
-import 'controller/mybinding.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -17,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(390, 1090),
+      designSize: const Size(390, 1090),
       builder: (context, child) {
         return GetMaterialApp(
           title: 'Flutter Demo',
@@ -27,11 +25,11 @@ class MyApp extends StatelessWidget {
           initialRoute: '/',
           locale: Locale('ar'),
           getPages: [
-            GetPage(name: '/', page: () => Home()),
+            GetPage(name: '/', page: () => const Home()),
             GetPage(
-                name: '/dreamScreen',
-                page: () => const ScreenTwo(),
-               ),
+              name: '/dreamScreen',
+              page: () => const ScreenTwo(),
+            ),
           ],
         );
       },
